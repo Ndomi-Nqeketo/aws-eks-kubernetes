@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-pod-nodeport-service
+  labels:
+    app: myapp
+    tier: front-end
+spec:
+  type: NodePort # ClusterIP, externalName, LoadBalancer
+  selector:
+    app: myapp
+    tier: front-end
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      nodePort: 30008
