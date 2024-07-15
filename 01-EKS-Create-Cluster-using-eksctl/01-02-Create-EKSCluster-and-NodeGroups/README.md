@@ -22,7 +22,8 @@ eksctl create cluster --name=eksdemo1 \
                       --without-nodegroup 
 
 # Get List of clusters
-eksctl get cluster                  
+eksctl get cluster 
+aws eks list-clusters --region us-east-1                 
 ```
 
 
