@@ -1,0 +1,7 @@
+aws_region     = "us-east-1"
+vpc_id         = "vpc-03902e1d40b7c0ee0"
+vpc_cidr_block = "192.168.0.0/16"
+subnet_id_1a   = "subnet-03bf58c383ad1f775"
+subnet_id_1b   = "subnet-0ebdc8d2a62f1f4cd"
+az_1a          = "us-east-1a"
+az_1b          = "us-east-1b"
