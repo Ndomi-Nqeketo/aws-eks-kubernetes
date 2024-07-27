@@ -34,7 +34,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 eksctl create cluster --name=eksdemo1 \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
-                      --version="1.21" \
+                      --version="1.30" \
                       --without-nodegroup 
 
 
@@ -62,7 +62,7 @@ eksctl create nodegroup --cluster=eksdemo1 \
                         --nodes-max=4 \
                         --node-volume-size=20 \
                         --ssh-access \
-                        --ssh-public-key=kube-demo \
+                        --ssh-public-key=mykey \
                         --managed \
                         --asg-access \
                         --external-dns-access \
@@ -76,13 +76,13 @@ eksctl create nodegroup --cluster=eksdemo1 \
 2. EKS Node Groups in Private Subnets
 ```t
 # Verfy EKS Cluster
-eksctl get cluster
+eksctl get cluster --region=us-east-1
 
 # Verify EKS Node Groups
-eksctl get nodegroup --cluster=eksdemo1
+eksctl get nodegroup --cluster=eksdemo1 --region=us-east-1
 
 # Verify if any IAM Service Accounts present in EKS Cluster
-eksctl get iamserviceaccount --cluster=eksdemo1
+eksctl get iamserviceaccount --cluster=eksdemo1 --region=us-east-1
 Observation:
 1. No k8s Service accounts as of now. 
 
