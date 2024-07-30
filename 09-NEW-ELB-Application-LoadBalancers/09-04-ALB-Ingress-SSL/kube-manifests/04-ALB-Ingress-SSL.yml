@@ -14,15 +14,15 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: ssl-ingress
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/heathcheck-protocol: HTTP
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
     alb.ingress.kubernetes.io/healthcheck-interval-seconds: '15'
     alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '5'
     alb.ingress.kubernetes.io/success-codes: '200'
-    alb.ingress.kubernetes.io/health-threshold-count: '2'
+    alb.ingress.kubernetes.io/healthy-threshold-count: '2'
     alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:225908212644:certificate/ffde9e0b-eede-4cd9-a3be-4824bad95f56
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:225908212644:certificate/4e818efc-1e33-4c22-bf87-71fff644dead
     alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   ingressClassName: my-aws-ingress-class
