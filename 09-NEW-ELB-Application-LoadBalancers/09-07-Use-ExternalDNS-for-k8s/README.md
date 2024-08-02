@@ -5,7 +5,7 @@ description: Learn AWS Load Balancer Controller - External DNS & Kubernetes Serv
 
 ## Step-01: Introduction
 - We will create a Kubernetes Service of `type: LoadBalancer`
-- We will annotate that Service with external DNS hostname `external-dns.alpha.kubernetes.io/hostname: externaldns-k8s-service-demo101.stacksimplify.com` which will register the DNS in Route53 for that respective load balancer
+- We will annotate that Service with external DNS hostname `external-dns.alpha.kubernetes.io/hostname: externaldns-k8s-service-demo101.player-list.co.za` which will register the DNS in Route53 for that respective load balancer
 
 ## Step-02: 02-Nginx-App1-LoadBalancer-Service.yml
 ```yaml
@@ -16,7 +16,7 @@ metadata:
   labels:
     app: app1-nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: externaldns-k8s-service-demo101.stacksimplify.com
+    external-dns.alpha.kubernetes.io/hostname: externaldns-k8s-service-demo101.player-list.co.za
 spec:
   type: LoadBalancer
   selector:
@@ -49,7 +49,7 @@ kubectl logs -f $(kubectl get po | egrep -o 'external-dns[A-Za-z0-9-]+')
 ```
 ### Verify Route53
 - Go to Services -> Route53
-- You should see **Record Sets** added for `externaldns-k8s-service-demo101.stacksimplify.com`
+- You should see **Record Sets** added for `externaldns-k8s-service-demo101.player-list.co.za`
 
 
 ## Step-04: Access Application using newly registered DNS Name
@@ -57,12 +57,12 @@ kubectl logs -f $(kubectl get po | egrep -o 'external-dns[A-Za-z0-9-]+')
 - Test if our new DNS entries registered and resolving to an IP Address
 ```t
 # nslookup commands
-nslookup externaldns-k8s-service-demo101.stacksimplify.com
+nslookup externaldns-k8s-service-demo101.player-list.co.za
 ```
 ### Access Application using DNS domain
 ```t
 # HTTP URL
-http://externaldns-k8s-service-demo101.stacksimplify.com/app1/index.html
+http://externaldns-k8s-service-demo101.player-list.co.za/app1/index.html
 ```
 
 ## Step-05: Clean Up
@@ -73,7 +73,7 @@ kubectl delete -f kube-manifests/
 ## Verify Route53 Record Set to ensure our DNS records got deleted
 - Go to Route53 -> Hosted Zones -> Records 
 - The below records should be deleted automatically
-  - externaldns-k8s-service-demo101.stacksimplify.com
+  - externaldns-k8s-service-demo101.player-list.co.za
 ```
 
 
