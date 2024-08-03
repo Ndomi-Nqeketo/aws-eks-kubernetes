@@ -13,7 +13,7 @@ eksctl utils associate-iam-oidc-provider \
     --cluster eksdemo1 \
     --approve
 
-cd /Users/ndomi/Documents/Dev
+cd /Users/ndomi/Documents
 
 eksctl create nodegroup --cluster=eksdemo1 \
                         --region=us-east-1 \
