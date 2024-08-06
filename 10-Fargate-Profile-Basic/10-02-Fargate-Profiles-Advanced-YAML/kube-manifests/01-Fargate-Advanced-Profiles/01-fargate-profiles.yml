@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: eksdemo1
+  region: us-east-1
+fargateProfiles:
+  - name: fp-app2
+    selectors:
+      - namespace: ns-app2
+  - name: fp-ums
+    selectors:
+      - namespace: ns-ums
+        labels:
+          app: fargate
