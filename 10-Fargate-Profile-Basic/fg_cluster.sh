@@ -145,7 +145,7 @@ kubectl get pods
 # Get list of Fargate Profiles in a cluster
 eksctl get fargateprofile --cluster eksdemo1
 
-eksctl utils install-vpc-controllers --region=us-east-1 --cluster=eksdemo1
+# eksctl utils install-vpc-controllers --region=us-east-1 --cluster=eksdemo1
 
 # kubectl create namespace fp-dev
 

@@ -4,7 +4,7 @@ resource "aws_db_instance" "eks_rds_db" {
   storage_type           = "gp2"
   engine                 = "mysql"
   engine_version         = "5.7.44"
-  name                   = "usermgmtdb"
+  # name                   = "usermgmtdb"
   identifier             = "usermgmtdb"
   username               = "dbadmin"
   password               = "dbpassword11"

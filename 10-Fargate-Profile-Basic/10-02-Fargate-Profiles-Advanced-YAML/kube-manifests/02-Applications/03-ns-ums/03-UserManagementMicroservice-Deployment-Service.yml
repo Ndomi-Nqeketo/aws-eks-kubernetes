@@ -34,9 +34,9 @@ spec:
         ports:
           - containerPort: 8095
         env:
-          - name: MYSQL_HOST
+          - name: DB_HOSTNAME
             value: "mysql"
-          - name: MYSQL_PORT
+          - name: DB_PORT
             value: "3306"
           - name: DB_NAME
             value: "usermgmtdb"
